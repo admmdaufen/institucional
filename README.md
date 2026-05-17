@@ -1,2 +1,2 @@
-# lp_inicial_mdaufen
+# institucional
 Landing page institucional criada para a M Daufen.
