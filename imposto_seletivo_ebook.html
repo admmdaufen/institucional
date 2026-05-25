@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Imposto Seletivo na Reforma Tributária Brasileira</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wine: #4A0E1A;
+    --wine-deep: #320810;
+    --wine-mid: #5C1020;
+    --gold: #C8921E;
+    --gold-light: #F0D878;
+    --gold-pale: #F5E8C0;
+    --cream: #FAF5EC;
+    --cream-dark: #F0E8D8;
+    --text-dark: #1A0A08;
+    --text-mid: #3D1A10;
+    --text-light: #8A6040;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* ── CAPA ── */
+  .cover {
+    background: var(--wine-deep);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 30%, rgba(200,146,30,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 80%, rgba(74,14,26,0.6) 0%, transparent 80%);
+  }
+
+  .cover-ornament-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  .cover-ornament-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 48px;
+    max-width: 680px;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0.85;
+  }
+
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--gold-pale);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .cover-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .cover-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 48px;
+    line-height: 1.5;
+  }
+
+  .cover-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  .cover-divider-line {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+
+  .cover-divider-line.right {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .cover-divider-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .cover-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--gold);
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+
+  /* ── SUMÁRIO ── */
+  .toc {
+    background: var(--wine);
+    color: var(--gold-pale);
+    padding: 80px 64px;
+    page-break-after: always;
+  }
+
+  .toc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 48px;
+    opacity: 0.75;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(200,146,30,0.12);
+    padding-bottom: 20px;
+  }
+
+  .toc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold);
+    opacity: 0.5;
+    min-width: 48px;
+    font-style: italic;
+  }
+
+  .toc-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold-pale);
+    flex: 1;
+  }
+
+  /* ── CAPÍTULOS ── */
+  .chapter {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 64px;
+    page-break-after: always;
+  }
+
+  .chapter-header {
+    margin-bottom: 52px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(200,146,30,0.25);
+  }
+
+  .chapter-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: -20px;
+  }
+
+  .chapter-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 12px;
+  }
+
+  .chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--wine);
+  }
+
+  .chapter p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+
+  .chapter h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--wine);
+    margin: 36px 0 16px;
+  }
+
+  /* Listas */
+  .chapter ul, .chapter ol {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .chapter ul li, .chapter ol li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-mid);
+    padding: 8px 0 8px 24px;
+    border-bottom: 1px solid rgba(200,146,30,0.1);
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .chapter ul li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 7px;
+    top: 12px;
+    opacity: 0.7;
+  }
+
+  .chapter ol {
+    counter-reset: list;
+  }
+
+  .chapter ol li {
+    counter-increment: list;
+  }
+
+  .chapter ol li::before {
+    content: counter(list, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 11px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    top: 8px;
+    opacity: 0.8;
+  }
+
+  /* Callout */
+  .callout {
+    background: linear-gradient(135deg, var(--wine-deep) 0%, var(--wine-mid) 100%);
+    border-left: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin: 36px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout p {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    font-style: italic;
+    color: var(--gold-pale) !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  /* Cards dois colunas */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 28px 0;
+  }
+
+  .card {
+    background: var(--cream-dark);
+    border: 1px solid rgba(200,146,30,0.2);
+    padding: 24px;
+    border-radius: 4px;
+  }
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .card ul { margin: 0 !important; }
+
+  .card.dark {
+    background: var(--wine-deep);
+  }
+
+  .card.dark .card-title { color: var(--gold); }
+
+  .card.dark li {
+    color: var(--gold-pale) !important;
+    border-color: rgba(200,146,30,0.15) !important;
+  }
+
+  /* Steps */
+  .steps {
+    counter-reset: steps;
+    margin: 28px 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(200,146,30,0.12);
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.4;
+    min-width: 40px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .step-content strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 6px;
+  }
+
+  .step-content p { margin: 0 !important; font-size: 13px !important; }
+
+  /* Caso prático */
+  .case-box {
+    background: var(--cream-dark);
+    border-top: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin: 28px 0;
+  }
+
+  .case-box-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--wine);
+    margin-bottom: 16px;
+  }
+
+  /* Erros */
+  .error-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(200,146,30,0.12);
+  }
+
+  .error-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--wine);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    margin-top: 2px;
+  }
+
+  .error-icon span { color: var(--gold); font-size: 12px; }
+
+  .error-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* Roadmap */
+  .roadmap-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(200,146,30,0.15);
+  }
+
+  .roadmap-badge {
+    background: var(--wine);
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    min-width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(200,146,30,0.3);
+    border-radius: 2px;
+    margin-top: 4px;
+  }
+
+  .roadmap-content strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 8px;
+  }
+
+  .roadmap-content p { margin: 0 !important; }
+
+  /* Tabela */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .data-table thead tr {
+    background: var(--wine);
+  }
+
+  .data-table thead th {
+    color: var(--gold-pale);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid rgba(200,146,30,0.4);
+  }
+
+  .data-table tbody tr {
+    border-bottom: 1px solid rgba(200,146,30,0.12);
+  }
+
+  .data-table tbody tr:nth-child(even) {
+    background: var(--cream-dark);
+  }
+
+  .data-table tbody td {
+    padding: 12px 16px;
+    color: var(--text-mid);
+    font-weight: 300;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .data-table tbody td:first-child {
+    font-weight: 500;
+    color: var(--wine);
+  }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid rgba(200,146,30,0.15);
+    padding: 20px 0;
+  }
+
+  .faq-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--wine);
+    margin-bottom: 10px;
+  }
+
+  .faq-a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin: 0 !important;
+  }
+
+  /* Consolidação */
+  .consolidation-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(200,146,30,0.12);
+  }
+
+  .consolidation-dot {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    min-width: 8px;
+  }
+
+  /* Página final */
+  .final-page {
+    background: var(--wine-deep);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(200,146,30,0.07) 0%, transparent 70%);
+  }
+
+  .final-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 560px;
+  }
+
+  .final-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--gold);
+    opacity: 0.3;
+    margin-bottom: 32px;
+    line-height: 1;
+  }
+
+  .final-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--gold-pale);
+    margin-bottom: 32px;
+    line-height: 1.3;
+  }
+
+  .final-body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: rgba(240,216,120,0.65);
+    line-height: 1.9;
+    margin-bottom: 48px;
+  }
+
+  .final-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .final-divider-line {
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .final-divider-line.r {
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .final-divider-gem {
+    width: 5px; height: 5px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .final-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* Rodapé */
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 64px;
+    border-top: 1px solid rgba(200,146,30,0.15);
+    background: var(--cream);
+    margin-top: auto;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  .footer-sep {
+    width: 4px; height: 4px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    opacity: 0.3;
+  }
+
+  .footer-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    opacity: 0.6;
+  }
+
+  @media print {
+    .chapter, .toc, .cover, .final-page { page-break-after: always; }
+  }
+
+  @media (max-width: 600px) {
+    .cover-title { font-size: 36px; }
+    .chapter { padding: 48px 32px; }
+    .toc { padding: 48px 32px; }
+    .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ CAPA ═══════════════════ -->
+<div class="cover">
+  <div class="cover-ornament-top"></div>
+  <div class="cover-inner">
+    <h1 class="cover-title">O Imposto Seletivo<br><em>na Reforma Tributária</em></h1>
+    <p class="cover-subtitle">Uma Análise Profunda de Suas Implicações<br>à luz da EC 132/2023 e da LC 214/2025</p>
+
+    <div class="cover-divider">
+      <div class="cover-divider-line"></div>
+      <div class="cover-divider-diamond"></div>
+      <div class="cover-divider-line right"></div>
+    </div>
+  </div>
+  <div class="cover-ornament-bottom"></div>
+</div>
+
+<!-- ═══════════════════ SUMÁRIO ═══════════════════ -->
+<div class="toc">
+  <div class="toc-title">Sumário</div>
+  <div class="toc-item"><span class="toc-num">01</span><span class="toc-name">Introdução à Reforma Tributária Brasileira</span></div>
+  <div class="toc-item"><span class="toc-num">02</span><span class="toc-name">Conceito e Fundamentos do Imposto Seletivo</span></div>
+  <div class="toc-item"><span class="toc-num">03</span><span class="toc-name">Base Legal e Constitucional</span></div>
+  <div class="toc-item"><span class="toc-num">04</span><span class="toc-name">Incidência e Produtos Afetados</span></div>
+  <div class="toc-item"><span class="toc-num">05</span><span class="toc-name">Alíquotas, Cálculo e Administração</span></div>
+  <div class="toc-item"><span class="toc-num">06</span><span class="toc-name">Implicações Econômicas e Setoriais</span></div>
+  <div class="toc-item"><span class="toc-num">07</span><span class="toc-name">Desafios Jurídicos e Perspectivas Futuras</span></div>
+  <div class="toc-item"><span class="toc-num">08</span><span class="toc-name">Conclusão e Recomendações</span></div>
+</div>
+
+<!-- ═══════════════════ PREFÁCIO ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-label">Prefácio</div>
+    <h2 class="chapter-title">Um tributo subestimado, mas decisivo</h2>
+  </div>
+
+  <p>Este e-book abrange o <strong>Imposto Seletivo (IS)</strong>, uma das inovações mais intrigantes e subestimadas da reforma tributária brasileira, promulgada pela Emenda Constitucional nº 132/2023. Elaborado a partir de mais de uma década de experiência prática em direito tributário — incluindo consultorias para empresas multinacionais e participação em debates acadêmicos —, este material foi criado para desmistificar um tema crucial que recebe pouca atenção na literatura especializada.</p>
+
+  <div class="callout">
+    <p>O IS não é apenas um tributo adicional; ele representa uma ferramenta extrafiscal poderosa, projetada para influenciar comportamentos sociais e econômicos, promovendo saúde pública e sustentabilidade ambiental.</p>
+  </div>
+
+  <p>Enquanto os debates se concentram no IBS e na CBS — os pilares do novo IVA-Dual que substituirão IPI, PIS, COFINS, ICMS e ISS a partir de 2026 —, o IS atua como um complemento regulatório, desestimulando o consumo de produtos nocivos como tabaco, álcool, bebidas açucaradas e combustíveis fósseis.</p>
+
+  <p>Com base na EC 132/2023 e na Lei Complementar nº 214/2025, este guia é essencial para advogados, contadores, empresários e estudantes que desejam compreender o sistema tributário brasileiro em profundidade.</p>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 1 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">01</div>
+    <div class="chapter-label">Capítulo 1</div>
+    <h2 class="chapter-title">Introdução à Reforma Tributária Brasileira</h2>
+  </div>
+
+  <p>A reforma tributária aprovada em dezembro de 2023 como EC 132/2023 surge de décadas de debates sobre a complexidade do sistema tributário brasileiro, marcado por cumulatividade, guerra fiscal entre estados e regressividade que penaliza os mais pobres.</p>
+
+  <h3>1.1 Histórico e Motivações</h3>
+  <p>A reforma remonta à PEC 45/2019, aprovada após intensas negociações no Congresso. Seus objetivos principais — conforme o art. 145, § 3º, da CF/88 alterado pela EC — incluem simplicidade, transparência, justiça tributária e defesa do meio ambiente.</p>
+
+  <div class="case-box">
+    <div class="case-box-title">Exemplo Ilustrativo: O labirinto tributário antigo</div>
+    <p style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);line-height:1.75;margin:0;">Uma fábrica de refrigerantes pagava IPI na produção, PIS/COFINS na venda, ICMS no transporte interestadual e ISS em serviços acessórios. No novo modelo, tudo se resume a IBS + CBS, com creditamento integral para evitar cumulatividade (art. 156-A, § 1º, IV).</p>
+  </div>
+
+  <h3>1.2 Pilares da Reforma: IBS e CBS</h3>
+  <p>O IBS incide sobre operações com bens materiais e imateriais, direitos e serviços, incluindo importações — mas não exportações. A CBS segue regras semelhantes. Ambos são não cumulativos, com creditamento mútuo (art. 149-B, IV).</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Tributo Antigo</th>
+        <th>Incidência</th>
+        <th>Cumulatividade</th>
+        <th>Novo Equivalente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>IPI (art. 153, IV)</td><td>Industrialização</td><td>Sim, parcial</td><td>IBS/CBS + IS</td></tr>
+      <tr><td>ICMS (art. 155, II)</td><td>Circulação de mercadorias</td><td>Sim, em alguns regimes</td><td>IBS</td></tr>
+      <tr><td>ISS (art. 156, III)</td><td>Serviços</td><td>Não cumulativo</td><td>IBS</td></tr>
+      <tr><td>PIS/COFINS (art. 195)</td><td>Faturamento</td><td>Cumulativo (lucro presumido)</td><td>CBS</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.3 O Papel do Imposto Seletivo na Reforma</h3>
+  <p>O IS (art. 153, VIII) é o destaque extrafiscal, incidindo sobre bens nocivos à saúde ou ao ambiente. Sua transição se dá em fases: alíquota-teste de 0,1% em 2026 (art. 125 do ADCT), cobrança plena em 2027 (art. 127), coexistência com o IPI até 2032 (art. 128).</p>
+
+  <div class="callout">
+    <p>Como um semáforo vermelho, o IS sinaliza 'pare' para produtos como cigarros, elevando preços para reduzir consumo e proteger a saúde pública e o meio ambiente.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Quando entra em vigor o IBS?</div>
+    <p class="faq-a">Alíquota-teste em 2026, com cobrança plena a partir de 2027.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">O IS substitui o IPI?</div>
+    <p class="faq-a">Parcialmente. O IPI será extinto progressivamente até 2033, sendo o IS seu sucessor funcional para os bens nocivos.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 2 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">02</div>
+    <div class="chapter-label">Capítulo 2</div>
+    <h2 class="chapter-title">Conceito e Fundamentos do Imposto Seletivo</h2>
+  </div>
+
+  <p>O IS é um imposto federal instituído pelo art. 153, VIII, da CF/88. Incide sobre a produção, extração, comercialização ou importação de bens e serviços prejudiciais à saúde ou ao meio ambiente. Diferente dos tributos arrecadatórios convencionais, sua natureza é essencialmente extrafiscal.</p>
+
+  <h3>2.1 Natureza Extrafiscal</h3>
+  <p>A função principal do IS não é arrecadar, mas regular comportamentos. Ele desestimula o consumo de produtos nocivos — como cigarros, que aumentam a incidência de cânceres (art. 196, CF/88) — por meio do encarecimento deliberado.</p>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Objetivos de Saúde Pública</div>
+      <ul>
+        <li>Redução do consumo de tabaco e álcool</li>
+        <li>Combate à obesidade via tributação de açucarados</li>
+        <li>Diminuição de doenças crônicas</li>
+        <li>Alinhamento ao art. 196 da CF/88</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <div class="card-title">Objetivos Ambientais</div>
+      <ul>
+        <li>Desincentivo ao uso de combustíveis fósseis</li>
+        <li>Redução de emissões de CO₂</li>
+        <li>Incentivo à transição para renováveis</li>
+        <li>Alinhamento ao art. 225 da CF/88</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.2 Fundamentos Constitucionais</h3>
+  <p>O IS se apoia nos princípios da capacidade contributiva (art. 145, § 1º), da seletividade (art. 153, § 3º, I) e da proteção ambiental (art. 225). Não incide sobre exportações (art. 153, VIII, "a") nem sobre energia e telecomunicações (salvo exceções). É monofásico — incide uma única vez na cadeia produtiva (art. 153, VIII, "c").</p>
+
+  <h3>2.3 IS × IPI: Comparação Direta</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Aspecto</th>
+        <th>Imposto Seletivo (IS)</th>
+        <th>IPI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Função Principal</td><td>Regulatória / extrafiscal</td><td>Arrecadatória e regulatória</td></tr>
+      <tr><td>Incidência</td><td>Bens nocivos específicos</td><td>Industrializados em geral</td></tr>
+      <tr><td>Creditamento</td><td>Limitado</td><td>Integral (regime não cumulativo)</td></tr>
+      <tr><td>Vigência</td><td>A partir de 2027 (plena)</td><td>Extinção progressiva até 2033</td></tr>
+    </tbody>
+  </table>
+
+  <div class="faq-item">
+    <div class="faq-q">O IS é cumulativo?</div>
+    <p class="faq-a">Não. O IS é monofásico e não cumulativo, mas oferece creditamento mais limitado do que o IBS/CBS.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Quais princípios constitucionais guiam o IS?</div>
+    <p class="faq-a">Justiça tributária, seletividade, capacidade contributiva e proteção ao meio ambiente (art. 145, § 3º).</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 3 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">03</div>
+    <div class="chapter-label">Capítulo 3</div>
+    <h2 class="chapter-title">Base Legal e Constitucional</h2>
+  </div>
+
+  <p>A estrutura normativa do IS está ancorada em três camadas: a Constituição Federal (via EC 132/2023), a legislação complementar (LC 214/2025) e as disposições transitórias do ADCT. Cada uma cumpre um papel distinto na arquitetura jurídica do tributo.</p>
+
+  <h3>3.1 Emenda Constitucional 132/2023</h3>
+  <p>A EC 132/2023 insere o art. 153, VIII, estabelecendo o "imposto sobre operações com bens e serviços prejudiciais à saúde ou ao meio ambiente". A competência é da União, com possibilidade de extensão aos estados para casos de extração mineral, via lei complementar.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Lei Complementar define bens nocivos</strong>
+        <p>A LC 214/2025 elenca, no Anexo XVII, as categorias sujeitas ao IS: fumígenos, alcoólicos, açucarados, veículos poluentes, combustíveis fósseis e minerais.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Lei ordinária fixa as alíquotas</strong>
+        <p>Dentro dos limites constitucionais, lei ordinária federal estabelece as alíquotas específicas ou ad valorem aplicáveis a cada categoria.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Incidência monofásica</strong>
+        <p>O IS incide uma única vez na cadeia — geralmente na saída da produção ou na importação —, evitando cumulatividade.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Integração com IBS e CBS</strong>
+        <p>O valor do IS integra a base de cálculo do IBS e da CBS (art. 153, VIII, "d"), embora o IS em si não gere créditos plenos para os compradores.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>3.2 Lei Complementar 214/2025</h3>
+  <p>Sancionada em janeiro de 2025, a LC 214/2025 (originada do PLP 68/2024) regulamenta conjuntamente o IS, o IBS e a CBS. O art. 419 da LC trata especificamente da transição do IPI para o IS, garantindo segurança jurídica durante o período de coexistência dos dois tributos.</p>
+
+  <div class="case-box">
+    <div class="case-box-title">Exemplo: Mineração e o Imposto Seletivo</div>
+    <p style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);line-height:1.75;margin:0;">Uma mineradora que extrai carvão — produto reconhecidamente nocivo ao ambiente — paga IS de até 1% sobre o valor de mercado (art. 153, VIII, § 1º), além de IBS e CBS sobre as operações de venda.</p>
+  </div>
+
+  <h3>3.3 Disposições Transitórias (ADCT)</h3>
+  <p>O cronograma de transição está definido nos arts. 125 a 132 do ADCT:</p>
+  <ul>
+    <li><strong>2026:</strong> alíquota-teste de 0,1% — fase de ajuste operacional</li>
+    <li><strong>2027:</strong> início da cobrança plena do IS</li>
+    <li><strong>2029–2032:</strong> redução gradual do IPI (de 9/10 até zerar)</li>
+    <li><strong>2033:</strong> extinção definitiva do IPI; IS assume integralmente</li>
+  </ul>
+
+  <div class="faq-item">
+    <div class="faq-q">Qual lei define as alíquotas do IS?</div>
+    <p class="faq-a">Lei ordinária federal, após a LC 214/2025 ter delimitado o rol de produtos e serviços sujeitos ao imposto.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 4 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">04</div>
+    <div class="chapter-label">Capítulo 4</div>
+    <h2 class="chapter-title">Incidência e Produtos Afetados</h2>
+  </div>
+
+  <p>O IS incide sobre a produção, a extração, a comercialização e a importação de bens e serviços classificados como prejudiciais à saúde ou ao meio ambiente. As exportações e, em regra, os serviços de energia e telecomunicações estão fora do seu âmbito.</p>
+
+  <h3>4.1 Categorias de Produtos Afetados</h3>
+  <p>O Anexo XVII da LC 214/2025 elenca as seguintes categorias sujeitas ao IS:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Categoria</th>
+        <th>Exemplos</th>
+        <th>Razão da Nocividade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Fumígenos</td><td>Cigarros, charutos, narguilé</td><td>Câncer, dependência química</td></tr>
+      <tr><td>Alcoólicos</td><td>Cerveja, vinho, destilados</td><td>Dependência, doenças hepáticas</td></tr>
+      <tr><td>Açucarados</td><td>Refrigerantes, sucos industriais</td><td>Obesidade, diabetes tipo 2</td></tr>
+      <tr><td>Veículos poluentes</td><td>Automóveis a gasolina/diesel</td><td>Emissões de CO₂ e particulados</td></tr>
+      <tr><td>Combustíveis fósseis</td><td>Petróleo, carvão, gás natural</td><td>Mudanças climáticas</td></tr>
+      <tr><td>Minerais</td><td>Minério de ferro, carvão mineral</td><td>Degradação ambiental</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p>Um refrigerante açucarado que paga IS na saída da fábrica tem seu preço elevado em 5 a 10%, incentivando o consumidor a optar por alternativas mais saudáveis — exatamente o efeito comportamental pretendido pela norma.</p>
+  </div>
+
+  <h3>4.2 Exceções e Regimes Especiais</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Não sujeito ao IS</div>
+      <ul>
+        <li>Exportações de qualquer produto</li>
+        <li>Veículos elétricos e híbridos</li>
+        <li>Serviços de telecomunicações (regra geral)</li>
+        <li>Energia elétrica (regra geral)</li>
+      </ul>
+    </div>
+    <div class="card dark">
+      <div class="card-title">Regimes Especiais</div>
+      <ul>
+        <li>Regimes aduaneiros suspensivos</li>
+        <li>Zona Franca de Manaus (análise caso a caso)</li>
+        <li>Produtos medicinais com tabaco (análise específica)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Veículos elétricos pagam IS?</div>
+    <p class="faq-a">Não. Apenas veículos que emitem poluentes estão sujeitos ao IS. Veículos elétricos e híbridos plug-in são incentivados justamente por serem alternativas sustentáveis.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">O IS incide sobre bebidas alcoólicas artesanais?</div>
+    <p class="faq-a">Em princípio sim, pois o critério é a natureza do produto, não o porte do produtor. Regimes diferenciados podem ser criados por lei ordinária para microempreendedores.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 5 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">05</div>
+    <div class="chapter-label">Capítulo 5</div>
+    <h2 class="chapter-title">Alíquotas, Cálculo e Administração</h2>
+  </div>
+
+  <p>A operacionalização do IS demanda compreensão clara sobre os tipos de alíquotas, a base de cálculo e os mecanismos de administração tributária, especialmente diante da integração com IBS e CBS.</p>
+
+  <h3>5.1 Tipos de Alíquotas</h3>
+  <p>O IS admite dois modelos de alíquota, que podem ser combinados dependendo do produto:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">A</div>
+      <div class="step-content">
+        <strong>Alíquota Específica</strong>
+        <p>Valor fixo por unidade de medida. Exemplo: R$ 0,50 por litro de cerveja ou R$ 5,00 por maço de cigarros. Garante previsibilidade e é menos suscetível à variação de preços.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">B</div>
+      <div class="step-content">
+        <strong>Alíquota Ad Valorem</strong>
+        <p>Percentual sobre o valor da operação. Na extração mineral, o teto constitucional é de 1% (art. 153, VIII, § 1º). Mais flexível, mas exige cuidado na definição da base de cálculo.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>5.2 Base de Cálculo e Integração com IVA-Dual</h3>
+  <p>Uma das particularidades mais relevantes do IS está na sua integração com o IVA-Dual: o valor do IS integra a base de cálculo do IBS e da CBS, mas o IS em si não é dedutível como crédito pelo adquirente.</p>
+
+  <div class="case-box">
+    <div class="case-box-title">Fluxo de Cálculo: IS + IBS + CBS</div>
+    <p style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);line-height:1.75;margin:0 0 12px;">Valor de venda: R$ 100,00 | IS (10%): R$ 10,00 | Base para IBS/CBS: R$ 110,00<br><br>Isso significa que o consumidor paga IS sobre o produto <em>e</em> IBS/CBS sobre o preço já acrescido do IS — um efeito em cascata que intensifica o custo de produtos nocivos, reforçando o caráter extrafiscal.</p>
+  </div>
+
+  <h3>5.3 Administração e Sujeitos Passivos</h3>
+  <p>A administração do IS é compartilhada com o IBS por meio do Comitê Gestor (art. 156-B da CF/88). Os sujeitos passivos incluem o produtor, o importador e, em determinadas hipóteses, terceiros integrantes da cadeia (art. 156-A, § 3º).</p>
+
+  <div class="faq-item">
+    <div class="faq-q">Há creditamento de IS para o comprador?</div>
+    <p class="faq-a">O creditamento é limitado. O IS integra a base do IBS/CBS — e sobre essa base o comprador pode aproveitar créditos de IBS/CBS —, mas o IS em si não gera crédito autônomo ao longo da cadeia.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Quem administra o IS?</div>
+    <p class="faq-a">A Receita Federal do Brasil, em articulação com o Comitê Gestor do IBS, que também coordena a arrecadação e a distribuição das receitas.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 6 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">06</div>
+    <div class="chapter-label">Capítulo 6</div>
+    <h2 class="chapter-title">Implicações Econômicas e Setoriais</h2>
+  </div>
+
+  <p>A implementação do IS provocará ajustes significativos em vários segmentos da economia brasileira. Compreender esses impactos é fundamental para o planejamento fiscal estratégico das empresas e para a leitura macroeconômica do novo sistema.</p>
+
+  <h3>6.1 Efeitos Macroeconômicos</h3>
+  <p>Estimativas baseadas em experiências internacionais — como as compiladas pela OCDE — indicam uma redução de 5 a 15% no consumo dos produtos tributados. As receitas do IS, estimadas entre R$ 10 e R$ 20 bilhões anuais, serão direcionadas a fundos de saúde e meio ambiente.</p>
+
+  <div class="callout">
+    <p>Para a economia como um todo, o IS representa um realinhamento de incentivos: tornar mais barato o saudável e o sustentável, e mais caro o nocivo e o poluente.</p>
+  </div>
+
+  <h3>6.2 Impactos por Setor</h3>
+
+  <div class="roadmap-step">
+    <div class="roadmap-badge">01</div>
+    <div class="roadmap-content">
+      <strong>Setor de Bebidas</strong>
+      <p>Aumento estimado de custos entre 8 e 10%, com pressão sobre margens. Estratégia recomendada: diversificação do portfólio para linhas não alcoólicas ou de baixo teor alcoólico.</p>
+    </div>
+  </div>
+
+  <div class="roadmap-step">
+    <div class="roadmap-badge">02</div>
+    <div class="roadmap-content">
+      <strong>Indústria do Tabaco</strong>
+      <p>Estimativa de redução de 10% nas vendas no médio prazo. O setor já opera sob tributação elevada; o IS representa uma pressão adicional estrutural.</p>
+    </div>
+  </div>
+
+  <div class="roadmap-step">
+    <div class="roadmap-badge">03</div>
+    <div class="roadmap-content">
+      <strong>Setor Automotivo</strong>
+      <p>Incentivo implícito à migração para veículos elétricos e híbridos. Montadoras que anteciparem essa transição ganham vantagem competitiva no novo ambiente regulatório.</p>
+    </div>
+  </div>
+
+  <div class="roadmap-step">
+    <div class="roadmap-badge">04</div>
+    <div class="roadmap-content">
+      <strong>Combustíveis Fósseis e Mineração</strong>
+      <p>Aumento de custos de 5 a 8% nas operações, criando incentivos para transição a fontes renováveis. Empresas de energia renovável e mineração sustentável saem favorecidas.</p>
+    </div>
+  </div>
+
+  <h3>6.3 Benefícios Sociais Esperados</h3>
+  <ul>
+    <li>Redução de internações por doenças relacionadas ao tabaco e ao álcool</li>
+    <li>Queda na incidência de obesidade e diabetes tipo 2 com o encarecimento de açucarados</li>
+    <li>Diminuição das emissões de gases de efeito estufa</li>
+    <li>Receitas adicionais para o SUS e para o Fundo Nacional do Meio Ambiente</li>
+  </ul>
+
+  <div class="faq-item">
+    <div class="faq-q">Há setores que se beneficiam com o IS?</div>
+    <p class="faq-a">Sim. Alimentos orgânicos, bebidas não alcoólicas, energias renováveis e veículos elétricos ganham competitividade relativa, pois seus concorrentes diretos ficam mais caros com o IS.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 7 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">07</div>
+    <div class="chapter-label">Capítulo 7</div>
+    <h2 class="chapter-title">Desafios Jurídicos e Perspectivas Futuras</h2>
+  </div>
+
+  <p>Como todo instituto tributário inovador, o IS já desperta questionamentos jurídicos relevantes e levanta perspectivas sobre seu desenvolvimento após a plena implementação. Conhecê-los é indispensável para uma assessoria tributária sólida.</p>
+
+  <h3>7.1 Principais Questões Litigiosas</h3>
+
+  <div class="error-item">
+    <div class="error-icon"><span>!</span></div>
+    <div class="error-text"><strong>Definição de "nocivo":</strong> A ausência de critérios objetivos e exaustivos para classificação de produtos como prejudiciais à saúde ou ao ambiente pode ensejar ADIs no STF, especialmente quando lei ordinária ampliar o rol além dos limites da LC 214/2025.</div>
+  </div>
+
+  <div class="error-item">
+    <div class="error-icon"><span>!</span></div>
+    <div class="error-text"><strong>Proporcionalidade das alíquotas:</strong> Alíquotas muito elevadas podem ser questionadas com base no princípio da proporcionalidade (art. 5º, LIV, CF/88) e no direito ao livre exercício de atividade econômica (art. 170, parágrafo único).</div>
+  </div>
+
+  <div class="error-item">
+    <div class="error-icon"><span>!</span></div>
+    <div class="error-text"><strong>Bitributação aparente:</strong> A integração do IS na base do IBS/CBS gera um efeito de tributação sobre tributo, que poderá ser contestado como violação do princípio da não cumulatividade em sua dimensão ampla.</div>
+  </div>
+
+  <div class="error-item">
+    <div class="error-icon"><span>!</span></div>
+    <div class="error-text"><strong>Federalismo e extração mineral:</strong> A possibilidade de os estados instituírem IS sobre mineração, via lei complementar, cria tensões federativas que poderão resultar em disputas sobre competência tributária.</div>
+  </div>
+
+  <h3>7.2 Coordenação Federativa</h3>
+  <p>O Comitê Gestor do IBS (art. 156-B da CF/88) é o mecanismo central para resolver disputas entre entes federativos sobre a administração compartilhada do IS. Sua efetividade será testada nos primeiros anos de vigência do novo sistema.</p>
+
+  <h3>7.3 Perspectivas Pós-2033</h3>
+  <p>Após a extinção do IPI em 2033, o IS deverá consolidar-se como o principal instrumento extrafiscal tributário brasileiro. As perspectivas incluem:</p>
+  <ul>
+    <li>Revisão do rol de produtos tributados para incorporar metas climáticas do Acordo de Paris</li>
+    <li>Integração de sistemas de fiscalização baseados em inteligência artificial</li>
+    <li>Possível extensão do IS a serviços de alta pegada de carbono</li>
+    <li>Alinhamento progressivo com sistemas de precificação de carbono globais</li>
+  </ul>
+
+  <div class="case-box">
+    <div class="case-box-title">Caso de Estudo Hipotético: Bebidas Energéticas</div>
+    <p style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);line-height:1.75;margin:0;">Uma fabricante de bebidas energéticas com alto teor de cafeína e açúcar questiona judicialmente sua inclusão no rol de "açucarados nocivos" da LC 214/2025, argumentando que seus produtos já são tributados de forma específica pelo ICMS. O STF deverá definir se o critério de nocividade é verificável objetivamente — e se a dupla incidência fere a capacidade contributiva do setor.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">O IS pode ser questionado judicialmente?</div>
+    <p class="faq-a">Sim. Os principais ângulos de contestação são: (a) seletividade excessiva, (b) violação da proporcionalidade, (c) imprecisão no conceito de nocividade e (d) bitributação aparente com IBS/CBS.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ CAPÍTULO 8 ═══════════════════ -->
+<div class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">08</div>
+    <div class="chapter-label">Capítulo 8</div>
+    <h2 class="chapter-title">Conclusão e Recomendações Práticas</h2>
+  </div>
+
+  <p>O Imposto Seletivo é pivotal para um sistema tributário moderno que alia arrecadação a objetivos sociais e ambientais. Sua correta compreensão não é opcional para quem atua ou opera no ambiente tributário brasileiro — é uma exigência do novo cenário regulatório.</p>
+
+  <div class="callout">
+    <p>O profissional que entender o IS antes dos seus concorrentes terá vantagem estratégica relevante durante todo o período de transição — e além dele.</p>
+  </div>
+
+  <h3>Checklist de Compliance para o Período 2025–2033</h3>
+
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Mapeie todos os produtos e insumos da sua operação e verifique se estão no Anexo XVII da LC 214/2025</span>
+  </div>
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Adeque os sistemas de ERP para calcular o IS separadamente do IBS e da CBS desde 2026</span>
+  </div>
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Acompanhe as leis ordinárias que definirão alíquotas específicas por categoria de produto</span>
+  </div>
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Monitore as decisões do STF sobre a constitucionalidade das normas regulamentadoras do IS</span>
+  </div>
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Avalie o impacto do IS no pricing da sua empresa e ajuste as estratégias de repasse ao consumidor</span>
+  </div>
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Explore oportunidades em produtos e serviços que ganham competitividade relativa com o IS (renováveis, orgânicos, elétricos)</span>
+  </div>
+  <div class="consolidation-item">
+    <div class="consolidation-dot"></div>
+    <span style="font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:300;color:var(--text-mid);">Consulte o portal gov.br/fazenda e o JOTA regularmente para atualizações regulatórias sobre o IS</span>
+  </div>
+
+  <h3>Referências Essenciais</h3>
+  <ul>
+    <li>EC 132/2023 — disponível em: www.planalto.gov.br</li>
+    <li>LC 214/2025 — regulamentação do IBS, CBS e IS</li>
+    <li>OCDE — Relatórios sobre impostos seletivos e extrafiscalidade</li>
+    <li>ALEXANDRE, Ricardo. <em>Direito Tributário Esquematizado.</em></li>
+    <li>Portal: gov.br/fazenda | jota.info</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════ PÁGINA FINAL ═══════════════════ -->
+<div class="final-page">
+  <div class="final-inner">
+    <div class="final-ornament">§</div>
+
+    <h2 class="final-title">O sistema mudou.<br>Sua leitura também precisa.</h2>
+
+    <p class="final-body">A reforma tributária brasileira não é apenas uma troca de tributos — é uma reconfiguração da lógica com que o Estado intervém na economia e nos comportamentos sociais. O Imposto Seletivo é a expressão mais clara dessa nova filosofia: tributar o que prejudica para proteger o que importa.</p>
+
+    <div class="final-divider">
+      <div class="final-divider-line"></div>
+      <div class="final-divider-gem"></div>
+      <div class="final-divider-line r"></div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- ═══════════════════ RODAPÉ ═══════════════════ -->
+<div class="page-footer">
+  <span class="footer-brand">Imposto Seletivo — Reforma Tributária Brasileira</span>
+  <div class="footer-sep"></div>
+  <span class="footer-tagline">EC 132/2023 · LC 214/2025</span>
+</div>
+
+</body>
+</html>
